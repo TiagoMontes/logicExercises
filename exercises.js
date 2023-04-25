@@ -2,7 +2,9 @@
 
 function longestConsec(arrayString, consecutive) {
     let longest = '';
-    // enquanto consecutive for maior que zero (eliminando possibilidades negativas), e i for menor ou igual ao tamanho da array - N cosnecutivos (assim, no caso de você ter N consecutivos maior que a array, ele irá encerrar o looping no ultimo consecutivo possível, pois não haverá valores para calcular a soma dos consecutivos)
+
+    // enquanto consecutive for maior que zero (eliminando possibilidades negativas), e i for menor ou igual ao tamanho da array - N cosnsecutivos (assim, no caso de você ter N consecutivo que não dê pra iterar sobre toda a array, ele irá encerrar o looping no ultimo consecutivo possível), ele irá iterar.
+    // Para saber se vamos iterar sobre todos os valores da array, você pode ver se o tamanho da array %(operador resto) consecutivo é igual a 1, se sim, todos os valores da array vão ser iterados, senão, alguns valores não serão iterados.
     for (let i = 0; consecutive > 0 && i <= arrayString.length - consecutive; i++) {
         let currentArray = arrayString.slice(i, i + consecutive).join('');
         if (joinStrings.length > longest.length) {
@@ -12,4 +14,4 @@ function longestConsec(arrayString, consecutive) {
     return longest;
 }
 
-consecString(["zone", "abigail", "theta", "form", "libe", "zas"],5)
+consecString(["zone", "abigail", "theta", "form", "alibeel", "zassg", 'hfbsdejhf', 'hfdsbf'], 3)
